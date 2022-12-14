@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="trail.css">
+</head>
+<body>
+    <h1 style="color:red">Trail Effect......</h1>
+    <script>
+        let images = ['❤️','😎','😢','🤣','😾','🙉','🐴','🦋','🫂','😵‍💫','🥵','🧡','😱','😰'];
+        document.addEventListener("mousemove",(event)=>{
+         let body = document.querySelector("body");
+         let emoji = document.createElement("span");
+         let x = event.offsetX;
+         let y = event.offsetY;
+
+         emoji.style.left = x+"px";
+         emoji.style.top = y+"px";
+
+         let icon = images[Math.floor(Math.random()* images.length)];
+         emoji.style.fontSize = "40px";
+         emoji.innerHTML = icon;
+        
+         body.appendChild(emoji);
+
+         setTimeout(()=>{
+            emoji.remove();
+         },500);
+        });
+    </script>
+</body>
+</html>
